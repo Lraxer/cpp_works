@@ -11,5 +11,6 @@ void readFile(const string& fileName, vector<string>& strline) {
         while(ifs>>tmp) {
             strline.push_back(tmp);
         }
+        ifs.close();
     }
 }
