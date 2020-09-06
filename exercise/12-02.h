@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 
-using std::cout, std::string, std::vector, std::initializer_list, std::shared_ptr, std::out_of_range;
+using std::cout; using std::string; using std::vector; using std::initializer_list; using std::shared_ptr; using std::out_of_range;
 
 class StrBlob {
 public:
