@@ -8,6 +8,8 @@
 
 using namespace std;
 
+allocator<string> StrVec::alloc;
+
 StrVec::StrVec(const initializer_list<string> &lst) {
     auto newdata = alloc_n_copy(lst.begin(), lst.end());
     elements = newdata.first;
