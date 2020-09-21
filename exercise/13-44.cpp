@@ -10,12 +10,16 @@ int main() {
     String s2 = "12434";
     // String()
     String s3;
-    String s4;
+    String s4("1");
     // String(const size_t, const char)
     String s5(5, '!');
     // String()
     String s6;
 
+    // check size
+    cout << s3.size() << endl;
+    cout << s4.size() << endl;
+    
     // String(const String&)
     s3 = s1;
     // operator=(const String&&)
@@ -36,6 +40,7 @@ int main() {
 
     // Overload <<
     cout << s7 << endl;
+
 
     return 0;
 }

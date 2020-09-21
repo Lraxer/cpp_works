@@ -103,7 +103,12 @@ inline String::~String() {
 }
 
 inline size_t String::size() const {
-    return tail-start;
+    if(*start=='\0') {
+        // if string is "", String saves as '\0\0'
+        return 0;
+    } else {
+        return tail-start;
+    }
 }
 
 inline char* String::begin() const {
@@ -158,12 +163,15 @@ ostream& operator<<(ostream &os, const String &str) {
 istream& operator>>(istream &is, String &str) {
     char *buf = new char[4096];
     is >> buf;
-    String tmp(buf);
-    str = std::move(tmp);
+    if(is) {
+        String tmp(buf);
+        str = std::move(tmp);
+    } else {
+        str = String();
+    }
 
     delete[] buf;
     return is;
 }
-
 
 #endif
